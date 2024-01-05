@@ -38,7 +38,7 @@ static void	resize1(char *path, int sizex, int sizey, int format)
 	int	y;
 
 	x = sizex / format;
-	y = sizey / format;
+	y = (sizey - 2) / format;
 	while (j < y)
 	{
 		i = 0;
@@ -69,6 +69,7 @@ static void	resize2(char *path, int format, t_data *data)
 	mlx_destroy_display(data->mlx);
 	free(data->mlx);
 	x /= format;
+	y -= (format * 8); 
 	y /= format;
 	while (j < y)
 	{
